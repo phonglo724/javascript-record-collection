@@ -24,10 +24,10 @@ function updateRecords(records, id, prop, value){
     // must always return the entire record collection object
     // records = {1245: {...} ....}
     // id = 5439
-    // prop = artist
+    // prop = artist/tracks
     // value = ABBA
-    if (records[id].prop != value){
-        records.prop = value;
+    if (records[id].prop != "tracks" && value != ""){
+        records.prop == value || records.tracks == value;
         return records;
     } else if (records[id].prop == value){
         Array.new = value;
