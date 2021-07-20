@@ -27,13 +27,13 @@ function updateRecords(records, id, prop, value){
     // prop = artist/tracks
     // value = ABBA
     if (prop !== "tracks" && value !== ""){
-        prop.hasOwnProperty = value;
-    } else if (prop !== "tracks"){
+        records[id][prop] = value;
+    } else if (prop !== "tracks" || records[id].hasOwnProperty("tracks") === false){
         Array.new = value;
     } else if (prop === "tracks" && value !== ""){
         records[id][prop].push(value);
     } else if (value === ""){
-        delete prop.value;
+        delete records[id][prop];
     }
     return records;
 }
