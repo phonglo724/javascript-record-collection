@@ -28,8 +28,8 @@ function updateRecords(records, id, prop, value){
     // value = ABBA
     if (prop !== "tracks" && value !== ""){
         records[id][prop] = value;
-    } else if (prop !== "tracks" || records[id].hasOwnProperty("tracks") === false){
-        Array.new = value;
+    } else if (prop === "tracks" && records[id].hasOwnProperty("tracks") === false){
+        records[id][prop] = [value];
     } else if (prop === "tracks" && value !== ""){
         records[id][prop].push(value);
     } else if (value === ""){
